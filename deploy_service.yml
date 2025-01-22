@@ -5,12 +5,12 @@
     - name: Clone repository
       git:
         repo: 'https://github.com/asefsadeghizade/ansible_task.git'
-        dest: /opt/ansible_task
+        dest: /home/asef/Desktop/ansible_task/ansible_task
         force: yes
 
     - name: Copy service file to systemd
       copy:
-        src: /opt/ansible_task/python_service.service
+        src: /home/asef/Desktop/ansible_task/ansible_task/python_service.service
         dest: /etc/systemd/system/python_service.service
 
     - name: Reload systemd daemon
