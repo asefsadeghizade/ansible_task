@@ -1,0 +1,13 @@
+[Unit]
+Description=Python Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/asef/Desktop/ansible_task/ansible_task/python_script.py
+Restart=always
+User=root
+WorkingDirectory=/home/asef/Desktop/ansible_task/ansible_task
+
+[Install]
+WantedBy=multi-user.target
+
