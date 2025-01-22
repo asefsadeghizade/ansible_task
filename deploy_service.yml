@@ -1,0 +1,24 @@
+- name: Deploy Python Service
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Clone repository
+      git:
+        repo: 'https://github.com/asefsadeghizade/ansible_task.git'
+        dest: /opt/ansible_task
+        force: yes
+
+    - name: Copy service file to systemd
+      copy:
+        src: /opt/ansible_task/python_service.service
+        dest: /etc/systemd/system/python_service.service
+
+    - name: Reload systemd daemon
+      command: systemctl daemon-reload
+
+    - name: Enable and start the Python service
+      systemd:
+        name: python_service
+        enabled: yes
+        state: started
+
