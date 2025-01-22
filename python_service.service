@@ -7,8 +7,8 @@ ExecStart=/usr/bin/python3 /home/asef/Desktop/ansible_task/ansible_task/python_s
 Restart=always
 User=root
 WorkingDirectory=/home/asef/Desktop/ansible_task/ansible_task
-StandardOutput=append:/var/log/python_service.log
-StandardError=append:/var/log/python_service.log
+StandardOutput=tty
+StandardError=tty
 
 [Install]
 WantedBy=multi-user.target
